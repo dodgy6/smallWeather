@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Modal, ModalBody, ModalFooter } from 'reactstrap';
 
 import List from './list'
-import If   from './if'
+import Modal from './modal'
 
 const messages = [ 
     '1st test message', 
@@ -119,21 +118,7 @@ class Form extends Component {
                         </div>
                     </div>
                 </form>
-                <Modal isOpen={modal}>
-                    <ModalBody>
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <label>{info}</label>
-                            </div>
-                        </div>
-                    </ModalBody>
-                    <ModalFooter>
-                        <If test={this.state.delete}>
-                            <button type="button" className="btn btn-danger" onClick={() => this.deleteMessage()}>Delete</button>
-                        </If>
-                        <button type="button" className="btn btn-info" onClick={() => this.toggle()}>Cancel</button>
-                    </ModalFooter>
-                </Modal>
+                <Modal modal={modal} toggle={this.toggle} deleteMessage={this.deleteMessage} info={info} remove={this.state.delete} />
             </div>
         )
     }
