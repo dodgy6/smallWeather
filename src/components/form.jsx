@@ -80,6 +80,7 @@ class Form extends Component {
         const message = this.state.messages[index]
 
         this.setState({
+            index,
             modal: true,
             delete: true,
             info: `Do you realy want delete "${message}" ?`
@@ -87,8 +88,9 @@ class Form extends Component {
     }
 
     // Delete selected message
-    deleteMessage(index){
-        const { messages } = this.state
+    deleteMessage(){
+        const index         = this.state.index
+        const { messages }  = this.state
         messages.splice(index, 1)
         this.toggle()
         this.setState({
