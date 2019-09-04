@@ -16,12 +16,11 @@ class App extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=Faro,pt&units=metric&APPID=b58080319ae781322bf26cc8a89ac424`)
-            .then(res => {
-                const weather = res.data.list
+        axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=Faro,pt&units=metric&APPID=b58080319ae781322bf26cc8a89ac424`).then(res => {
+            const weather = res.data.list
 
-                this.setState({ weather: weather })
-            })
+            this.setState({ weather: weather })
+        })
     }
 
     renderRows(){

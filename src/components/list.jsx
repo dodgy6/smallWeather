@@ -11,7 +11,7 @@ class List extends Component {
                     <button type="button" className="btn btn-warning form-control" onClick={() => {this.props.editMessage(index, message) }}>Edit</button>
                 </div>
                 <div className="col-sm-3 col-md-2">
-                    <button type="button" className="btn btn-danger form-control" onClick={() => {this.props.deleteMessage(index) }}>Delete</button>
+                    <button type="button" className="btn btn-danger form-control" onClick={() => {this.props.askDelete(index) }}>Delete</button>
                 </div>
             </div>
         ))
